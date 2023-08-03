@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+
+  </style>
+  <title>
+    Theme picker
+  </title>
+</head>
+
+<body>
+  <p>
+  Background <button id = resetValue onclick="resetColors()">reset to default</button></p><p>
+  <input id="backgroundColorpicker" type="color" value="#ffffff" onchange="passValuePickerToParam(0, this.value)">
+
+  <input id="backgroundHexInput" type="text" size="6">
+  <button id="backgroundColorButton" onclick="changeBackgroundcolorFromHex(backgroundHexInput.value)">Change color of
+    background with hex number</button>
+  </p>
+
+  <p>
+  <p>TextColor</p>
+  <input id="textColorpicker" type="color" value="#000000" onchange="passValuePickerToParam(1, this.value)">
+
+  <input id="textHexInput" type="text" value="000000" size="6">
+  <button id="textButton" onclick="changeTextcolorFromHex(textHexInput.value)">Change color of text with hex
+    number</button>
+  </p>
+
+  <p>Some customers codes:</p>
+  <p id = "Pcs">fuschia roze = #D9027D <button id = "pcsBgColorButton" onclick= "changeBackgroundcolorFromHex('D9027D');">Change background to fuscia</button><button id = "pcsTxtColorButton" onclick= "changeTextcolorFromHex('D9027D');">Change text to fuscia</button></p>
+
+
+  <script>
+//todo
+//type font
+//rgb input
+    const backgroundColorpicker = document.getElementById('backgroundColorpicker');
+    let backgroundColor;
+
+    const textColorpicker = document.getElementById('textColorpicker');
+    let textColor;
+
+    let pcsColorFuscia = "#D9027D";
+
+
+    function passValuePickerToParam(pickerTochoice, value) {
+      switch (pickerTochoice) {
+        case 0:
+          changeBackgroundcolorFromHex(value);
+
+          console.log(value);
+          break;
+        case 1:
+          changeTextcolorFromHex(value);
+          console.log(value);
+      }
+    }
+
+
+    function changeBackgroundcolorFromHex(hex) {
+      backgroundColor = "" + hex
+
+      if (!backgroundColor.startsWith("#")) {
+        backgroundColor = "#" + hex;
+      }
+
+      backgroundColorpicker.value = backgroundColor;
+      document.body.style.backgroundColor = backgroundColor;
+      document.getElementById('backgroundHexInput').value = backgroundColor;
+    }
+
+
+    function changeTextcolorFromHex(hex) {
+      textColor = "" + hex;
+
+      if (!textColor.startsWith("#")) {
+        textColor = "#" + textColor;
+      }
+
+      textColorpicker.value = textColor;
+      document.body.style.color = textColor;
+      document.getElementById('textHexInput').value = textColor;
+    }
+
+    function resetColors(){
+      changeBackgroundcolorFromHex('ffffff');
+      changeTextcolorFromHex('000000');
+    }
+
+    //onChange 
+    setInterval(() => {
+      backgroundColor = backgroundColorpicker.value;
+      document.body.style.backgroundColor = backgroundColor;
+
+      textColor = textColorpicker.value;
+      document.body.style.color = textColor;
+
+    }, 200);
+
+
+  </script>
+</body>
+
+</html>
