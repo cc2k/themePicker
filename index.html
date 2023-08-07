@@ -2,8 +2,8 @@
 <html>
 
 <head>
+  <link href="resources/css/styles.css" rel="stylesheet"/>
   <style>
-
   </style>
   <title>
     Theme picker
@@ -11,34 +11,65 @@
 </head>
 
 <body>
-  <p>
-  Background <button id = resetValue onclick="resetColors()">reset to default</button></p><p>
-  <input id="backgroundColorpicker" type="color" value="#ffffff" onchange="passValuePickerToParam(0, this.value)">
+  <div class = "container" >
+    <div class = "normalcolors" >
+      <div class = backgroundcolor>
+      <p>
+      <p>Background</p>
+        <input id="backgroundColorpicker" type="color" value="#ffffff" onchange="passValuePickerToParam(0, this.value)">
 
-  <input id="backgroundHexInput" type="text" size="6">
-  <button id="backgroundColorButton" onclick="changeBackgroundcolorFromHex(backgroundHexInput.value)">Change color of
-    background with hex number</button>
-  </p>
+        <input id="backgroundHexInput" type="text" size="6" value="#ffffff">
+        
+        <button id="backgroundColorButton" onclick="changeBackgroundcolorFromHex(backgroundHexInput.value)">Change background</button>
+      </p>
+    </div>
+    <div class = textcolor>
+     <p>
+      <p>TextColor</p>
+      <input id="textColorpicker" type="color" value="#000000" onchange="passValuePickerToParam(1, this.value)">
+      <input id="textHexInput" type="text" value="#000000" size="6">
+      <button id="textButton" onclick="changeTextcolorFromHex(textHexInput.value)">Change text</button>
+      </p>
+</div>
+    </div>
+    
+    
+    <div class="vl"></div>
+    
+    
+    <div class = "invertedcolors" >
 
-  <p>
-  <p>TextColor</p>
-  <input id="textColorpicker" type="color" value="#078000" onchange="passValuePickerToParam(1, this.value)">
+      <p>
+      <p>Background inverted</p>
+       <input id="backgroundColorInvertedpicker" type="color" value="#000000">
+        <input id="backgroundHexInvertedInput" type="text" size="6" value="#000000">
+      </p>
 
-  <input id="textHexInput" type="text" value="000000" size="6">
-  <button id="textButton" onclick="changeTextcolorFromHex(textHexInput.value)">Change color of text with hex
-    number</button>
-  </p>
+      <p>
+      <p>TextColor inverted</p>
+      <input id="textColorInvertedpicker" type="color" value="#ffffff" >
+      <input id="textHexInvertedInput" type="text" value="#ffffff" size="6">
+      </p>
+    </div>
+  </div>
 
+
+  <div class = "customerchoice">
   <p>Some customers codes:</p>
-  <p id = "Pcs">fuschia roze = #D9027D <button id = "pcsBgColorButton" onclick= "changeBackgroundcolorFromHex('D9027D');">Change background to fuscia</button><button id = "pcsTxtColorButton" onclick= "changeTextcolorFromHex('D9027D');">Change text to fuscia</button></p>
-
+  <p id="Pcs">fuschia roze = #D9027D >
+    <button id="pcsBgColorButton"
+      onclick="changeBackgroundcolorFromHex('D9027D');">Change background to fuscia</button></br>
+      <button
+      id="pcsTxtColorButton" onclick="changeTextcolorFromHex('D9027D');">Change text to fuscia</button></p>
+    </div>
+    <button id=resetValue onclick="resetColors()">reset to default</button>
 
   <script>
-//todo
-//type font
-//rgb input
-//save 
-//list with previous saves
+    //todo
+    //type font
+    //rgb input
+    //save 
+    //list with previous saves
 
     const backgroundColorpicker = document.getElementById('backgroundColorpicker');
     let backgroundColor;
@@ -59,6 +90,7 @@
         case 1:
           changeTextcolorFromHex(value);
           console.log(value);
+          break;
       }
     }
 
@@ -88,7 +120,7 @@
       document.getElementById('textHexInput').value = textColor;
     }
 
-    function resetColors(){
+    function resetColors() {
       changeBackgroundcolorFromHex('ffffff');
       changeTextcolorFromHex('000000');
     }
@@ -100,7 +132,6 @@
 
       textColor = textColorpicker.value;
       document.body.style.color = textColor;
-
     }, 200);
 
 
