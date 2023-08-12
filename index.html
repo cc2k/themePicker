@@ -70,12 +70,12 @@
   <div class="customerchoice" id="customerchoice">
     <p>Some customers codes:</p>
     <p id="Pcs">fuschia roze = #D9027D >
-      <button id="pcsBgColorButton" onclick="changeBackgroundcolorFromHex('D9027D');">Change background to
+      <button id="pcsBgColorButton" onclick="passValuePickerToParam(2,pcsColorFuscia);">Change background to
         fuscia</button></br>
-      <button id="pcsTxtColorButton" onclick="changeTextcolorFromHex('D9027D');">Change text to fuscia</button>
+      <button id="pcsTxtColorButton" onclick="passValuePickerToParam(3,pcsColorFuscia);">Change text to fuscia</button>
     </p>
   </div>
-  <button id=resetValue onclick="resetColors()">reset to default</button>
+  <button id=resetValue onclick="passValuePickerToParam(4,null)">reset to default</button>
 
   <script>
     //todo
@@ -116,6 +116,9 @@
     const text1p = document.getElementById('normaltextcolor');
     const text2p = document.getElementById('invertedbackgroundtext');
 
+    //buttons to chnage the colors??
+
+    
 
     // let backgroundColor, backgroundInvertedColor,textColor, textInvertedColor;
     let pcsColorFuscia = "#D9027D";
@@ -124,18 +127,33 @@
     function passValuePickerToParam(pickerTochoice, value) {
       switch (pickerTochoice) {
         case 0:
-          changeBackgroundcolorFromHex();
+          changeBackgroundcolorFromPicker(value);
           console.log(value);
           break;
         case 1:
-          changeTextcolorFromHex();
+          changeTextcolorFromPicker(value);
           console.log(value);
           break;
+          case 2:
+            backgroundColorpicker.value = value;
+            changeBackgroundcolorFromPicker(value);
+            break;
+            case 3:
+            textColorpicker.value = value;
+              changeTextcolorFromPicker(value);
+              break;
+              case 4:
+              backgroundColorpicker.value = "#ffffff";
+              textColorpicker.value = "#000000";
+            changeBackgroundcolorFromPicker("#ffffff");
+            changeTextcolorFromPicker("#000000");
+
+                break;
       }
     }
 
 
-    function changeBackgroundcolorFromHex() {
+    function changeBackgroundcolorFromPicker(value) {
       // backgroundColor = "" + hex
 
 
@@ -143,7 +161,7 @@
       //   backgroundColor = "#" + hex;
       // }
 
-      const hex = backgroundColorpicker.value;
+      const hex = value;
 
       divBackground.style.backgroundColor = hex;
       backgroundColorpicker.value = hex; //needed??
@@ -159,14 +177,14 @@
     }
 
 
-    function changeTextcolorFromHex() {
+    function changeTextcolorFromPicker(value) {
       // textColor = "" + hex;
 
       // if (!textColor.startsWith("#")) {
       //   textColor = "#" + textColor;
       // }
 
-      const hex = textColorpicker.value;
+      const hex = value;
 
       divBackgroundInverted.style.background = hex;
       backgroundInvertedColorpicker.value = hex;
@@ -184,31 +202,9 @@
     }
 
     function resetColors() {
-      changeBackgroundcolorFromHex('ffffff');
-      changeTextcolorFromHex('000000');
+
     }
 
-    //onChange 
-    // setInterval(() => {
-    //   backgroundColor = backgroundColorpicker.value;
-
-
-    //   changeBackgroundcolorFromHex();
-    //   changeTextcolorFromHex();
-
-    //   // divBackground.style.backgroundColor = backgroundColor;
-    //   // document.getElementById('backgroundHexInput').value = backgroundColor;
-
-    //   // //invereted vackground to text
-    //   // divBackgroundInverted.style.color = textColor;
-    //   // document.getElementById('textHexInvertedInput').value = textColor;
-
-
-    //   // //text color
-    //   // textColor = textColorpicker.value;
-    //   // divBackground.style.color = textColor;
-    //   // document.getElementById('textHexInput').value = textColor;
-    // }, 200);
 
 
   </script>
