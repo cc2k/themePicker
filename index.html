@@ -23,7 +23,7 @@
         <!-- bg1wheel -->
         <input id="backgroundcolorpicker" type="color" value="#ffffff" onchange="passValuePickerToParam(0, this.value)">
         <!-- bg1hex -->
-        <input id="backgroundhexinput" type="text" size="6" value="#ffffff">
+        <input id="backgroundhexinput" type="text" size="6" value="#ffffff" onkeydown="checkForEnter(2, this.value )">
 
 
       </div>
@@ -34,7 +34,7 @@
         <!-- text1wheel -->
         <input id="textcolorpicker" type="color" value="#000000" onchange="passValuePickerToParam(1, this.value)">
         <!-- text1hex -->
-        <input id="texthexinput" type="text" value="#000000" size="6">
+        <input id="texthexinput" type="text" value="#000000" size="6" onkeydown="checkForEnter(3, this.value )">
 
       </div>
     </div>
@@ -78,11 +78,6 @@
   <button id=resetValue onclick="passValuePickerToParam(4,null)">reset to default</button>
 
   <script>
-    //todo
-    //type font
-    //rgb input
-    //saves 
-    //list with previous saves
 
     //  background 1 +2
     const divBackground = document.getElementById('backgroundcolor');
@@ -201,8 +196,12 @@
 
     }
 
-    function resetColors() {
+    function checkForEnter(modeToChose, valueToPass) {
+      console.log(event.keyCode +" mode:" +modeToChose+" value:"+valueToPass);
 
+      if(event.keyCode == 13){
+        passValuePickerToParam(modeToChose, valueToPass);
+      }
     }
 
 
