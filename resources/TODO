@@ -1,0 +1,6 @@
+    type font
+    rgb input
+    pressOnenterMethod fix -- done!
+    saves 
+    list with previous saves
+    localization
