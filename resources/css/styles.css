@@ -1,0 +1,83 @@
+div{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blueviolet; */
+    padding: 10px;
+    height: 700px;
+    width:100%;
+}
+.container
+{
+  background-color: blue;
+  /* width: 100%; 
+  height: 100%; */
+}
+
+.backgroundtext{
+  color:white;
+  stroke: 1px; 
+  font-weight: bold;
+}
+.normaltextcolor{
+  color:white;
+  stroke: 1px; 
+  font-weight: bold;
+}
+
+.invertedbackground{
+  color:white;
+  stroke: 1px; 
+  font-weight: bold;
+}
+
+.invertedbackgroundtext{
+  color:white;
+  stroke: 1px; 
+  font-weight: bold;
+}
+.normalcolors{
+  background-color: yellow;
+  /* width: 50%; 
+  height: 70%; */
+}
+
+.backgroundcolor{
+  /* background-color: tomato; */
+  /* width: 50%; 
+  height: 50%; */
+  
+}
+.normaltext{
+  /* background-color: darkblue; */
+  /* width: 50%; 
+  height: 50%; */
+  
+}
+
+.invertedcolors{
+  background-color: rgb(87, 10, 40);
+  /* width: 50%; 
+  height: 70%; */
+}
+
+input{
+  margin: 3px;
+}
+
+
+.vl {
+  border-left: 6px solid green;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+  top: 0;
+}
+
+.customerchoice
+{
+  background-color: aqua;
+  vertical-align: bottom;
+}
