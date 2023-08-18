@@ -13,11 +13,11 @@
   position: relative;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  /* display: inline; */
 }
 
 .font-select .fs-drop {
-  background: #fff;
+  background: #8d2a2a;
   border: 1px solid #aaa;
   border-top: 0;
   position: absolute;

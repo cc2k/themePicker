@@ -98,33 +98,8 @@
   <button id=resetValue onclick="passValuePickerToParam(4,null)">reset to default</button>
 
   <script>
-    //fontpickerr ----------------------
+  
 
-window.onload = function() {
-  //YOUR JQUERY CODE
-  $('#font').fontselect();
-
-}
-
-$(function(){
-  $('#fonts').fontselect().change(function(){
-
-    // replace + signs with spaces for css
-    var font = $(this).val().replace(/\+/g, ' ');
-
-    // split font into family and weight
-    font = font.split(':');
-
-    // set family on paragraphs
-    $('p').css('font-family', font[0]);
-  });
-});
-
-
-//---------------------------------------
-
-      key = api_key;
-      console.log(key);
     //  background 1 +2
     const divBackground = document.getElementById('backgroundcolor');
     const divBackgroundInverted = document.getElementById('invertedbackgroundcolors');
@@ -163,6 +138,32 @@ $(function(){
 
     // let backgroundColor, backgroundInvertedColor,textColor, textInvertedColor;
     let pcsColorFuscia = "#D9027D";
+
+
+      //fontpickerr ----------------------
+
+window.onload = function() {
+  //YOUR JQUERY CODE
+  $('#font').fontselect();
+
+}
+
+$(function(){
+  $('#fonts').fontselect().change(function(){
+
+    // replace + signs with spaces for css
+    var font = $(this).val().replace(/\+/g, ' ');
+
+    // split font into family and weight
+    font = font.split(':');
+
+    // set family on paragraphs
+    $('p').css('font-family', font[0]);
+  });
+});
+
+
+//---------------------------------------
 
 
     function passValuePickerToParam(pickerTochoice, value) {
