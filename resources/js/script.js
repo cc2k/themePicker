@@ -1,4 +1,38 @@
 
+const reset = document.getElementById("resetValue");
+const pcsBgColorButton = document.getElementById("pcsBgColorButton");
+const pcsTxtColorButton = document.getElementById("pcsTxtColorButton");
+
+const normalColors = document.getElementById('normal-colors');
+const invertedColors = document.getElementById('inverted-colors');
+
+//bg1wheel + bg2wheel
+const backgroundColorpicker = document.getElementById('backgroundcolorpicker');
+const backgroundInvertedColorpicker = document.getElementById('backgroundcolorinvertedpicker');
+
+//bg1hex + bg2hex
+const normalBackgroundHex = document.getElementById('backgroundhexinput');
+const invertedBackgroundHex = document.getElementById('backgroundhexinvertedinput');
+
+//text1wheel + text2wheel
+const textColorpicker = document.getElementById('textcolorpicker');
+const textColorInvertedpicker = document.getElementById('textcolorinvertedpicker');
+
+//text1hex + text2hex
+const normalTextHex = document.getElementById('texthexinput');
+const invertedTextHex = document.getElementById('texthexinvertedinput');
+
+//bg1p + bg2p
+const bg1p = document.getElementById('backgroundtext');
+const bg2p = document.getElementById('invertedbackground');
+
+//text1p + text2p
+const text1p = document.getElementById('normaltextcolor');
+const text2p = document.getElementById('invertedbackgroundtext');
+
+
+
+
 //fontpickerr ----------------------
 
 window.onload = function () {
@@ -8,7 +42,7 @@ window.onload = function () {
 
   backgroundColorpicker.addEventListener('change', function () { passValuePickerToParam(0, backgroundColorpicker.value); }, false);
 
-  textcolorpicker.addEventListener('change', function () { passValuePickerToParam(1, backgroundColorpicker.value); }, false);
+  textColorpicker.addEventListener('change', function () { passValuePickerToParam(1, textColorpicker.value); }, false);
 
   pcsBgColorButton.addEventListener('click', function () { passValuePickerToParam(2, pcsColorFuscia); }, false);
 
@@ -104,36 +138,6 @@ function checkForEnter(modeToChose, valueToPass) {
 
 
 
-  const reset = document.getElementById("resetValue");
-  const pcsBgColorButton = document.getElementById("pcsBgColorButton");
-  const pcsTxtColorButton = document.getElementById("pcsTxtColorButton");
-
-  const normalColors = document.getElementById('normal-colors');
-  const invertedColors = document.getElementById('inverted-colors');
-
-  //bg1wheel + bg2wheel
-  const backgroundColorpicker = document.getElementById('backgroundcolorpicker');
-  const backgroundInvertedColorpicker = document.getElementById('backgroundcolorinvertedpicker');
-
-  //bg1hex + bg2hex
-  const normalBackgroundHex = document.getElementById('backgroundhexinput');
-  const invertedBackgroundHex = document.getElementById('backgroundhexinvertedinput');
-
-  //text1wheel + text2wheel
-  const textColorpicker = document.getElementById('textcolorpicker');
-  const textColorInvertedpicker = document.getElementById('textcolorinvertedpicker');
-
-  //text1hex + text2hex
-  const normalTextHex = document.getElementById('texthexinput');
-  const invertedTextHex = document.getElementById('texthexinvertedinput');
-
-  //bg1p + bg2p
-  const bg1p = document.getElementById('backgroundtext');
-  const bg2p = document.getElementById('invertedbackground');
-
-  //text1p + text2p
-  const text1p = document.getElementById('normaltextcolor');
-  const text2p = document.getElementById('invertedbackgroundtext');
-
+ 
 }
 
