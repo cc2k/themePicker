@@ -2,19 +2,19 @@
 <html>
 
 <head>
- 
+
   <link href="resources/css/styles.css" rel="stylesheet" />
   <script type="text/javascript" src="/resources/js/script.js" defer></script>
-<!-- jquery -->
+  <!-- jquery -->
   <script src="resources/jquery/jquery-min.js" type="text/javascript"></script>
-  
-  
+
+
   <!-- font selctor -->
   <link rel="stylesheet" href="resources/css/fontselect.css">
   <!-- <script src="//code.jquery.com/jquery.min.js"></script> -->
   <script src="resources/fontpicker/jquery.fontselect.js"></script>
   <!--  -->
-  
+
   <title>
     Theme picker
   </title>
@@ -27,22 +27,24 @@
       <!-- background 1
       <div class=backgroundcolor id="backgroundcolor">
         <!-- bg1p -->
-        <p class="backgroundtext" id="backgroundtext">Background</p>
-        <!-- bg1wheel -->
-        <input id="backgroundcolorpicker" type="color" value="#ffffff" onchange="passValuePickerToParam(0, this.value)">
-        <!-- bg1hex -->
-        <input id="backgroundhexinput" type="text" size="6" value="#ffffff" onkeydown="checkForEnter(2, this.value )">
+      <p class="backgroundtext" id="backgroundtext">Background</p>
+      <!-- bg1wheel -->
+      <input id="backgroundcolorpicker" type="color" value="#ffffff">
+      <!-- bg1hex -->
+      <input id="backgroundhexinput" type="text" size="6" value="#ffffff">
 
-        <!-- text1p -->
-        <p class="normaltextcolor" id="normaltextcolor">TextColor</p>
-        <!-- text1wheel -->
-        <input id="textcolorpicker" type="color" value="#000000" onchange="passValuePickerToParam(1, this.value)">
-        <!-- text1hex -->
-        <input id="texthexinput" type="text" value="#000000" size="6" onkeydown="checkForEnter(3, this.value )">
-        <p>
-        <input class = "fonts" id="fonts" type="text" >
-        <input class = "fonts-size" id="fonts-size" type="number" >
-        <p class = "text-to-change" id = "text-to-change">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, dolores. In, iste quas nam iusto aperiam enim distinctio. Consectetur vero unde odit obcaecati voluptatibus laudantium maxime soluta neque rem cum!</p>
+      <!-- text1p -->
+      <p class="normaltextcolor" id="normaltextcolor">TextColor</p>
+      <!-- text1wheel -->
+      <input id="textcolorpicker" type="color" value="#000000">
+      <!-- text1hex -->
+      <input id="texthexinput" type="text" value="#000000" size="6">
+      <p>
+        <input class="fonts" id="fonts" type="text">
+        <input class="fonts-size" id="fonts-size" type="number">
+      <p class="text-to-change" id="text-to-change">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
+        dolores. In, iste quas nam iusto aperiam enim distinctio. Consectetur vero unde odit obcaecati voluptatibus
+        laudantium maxime soluta neque rem cum!</p>
       </p>
 
     </div>
@@ -56,70 +58,38 @@
       <input id="backgroundhexinvertedinput" type="text" size="6" value="#000000">
 
       <p class="invertedbackgroundtext" id="invertedbackgroundtext">TextColor inverted</p>
-        <!-- text2wheel -->
-        <input id="textcolorinvertedpicker" type="color" value="#ffffff">
-        <!-- text2hex -->
-        <input id="texthexinvertedinput" type="text" value="#ffffff" size="6">
-        <p class = "text-to-change" id = "text-to-change">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, dolores. In, iste quas nam iusto aperiam enim distinctio. Consectetur vero unde odit obcaecati voluptatibus laudantium maxime soluta neque rem cum!</p>
+      <!-- text2wheel -->
+      <input id="textcolorinvertedpicker" type="color" value="#ffffff">
+      <!-- text2hex -->
+      <input id="texthexinvertedinput" type="text" value="#ffffff" size="6">
+      <p class="text-to-change" id="text-to-change">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
+        dolores. In, iste quas nam iusto aperiam enim distinctio. Consectetur vero unde odit obcaecati voluptatibus
+        laudantium maxime soluta neque rem cum!</p>
 
     </div>
   </div>
 
-  
-  <hr class="divider-hor"></hr>
 
-  
+  <hr class="divider-hor">
+  </hr>
+
+
   <div class="customer-block">
-  <div class="custommer-choice" id="custommer-choice">
+    <div class="custommer-choice" id="custommer-choice">
 
-    <p>Some customers codes:</p>
-    <p id="Pcs">fuschia roze = #D9027D >
-      <button id="pcsBgColorButton" onclick="passValuePickerToParam(2,pcsColorFuscia);">Change background to
-        fuscia</button></br>
-      <button id="pcsTxtColorButton" onclick="passValuePickerToParam(3,pcsColorFuscia);">Change text to fuscia</button>
-    </p>
+      <p>Some customers codes:</p>
+      <p id="Pcs">fuschia roze = #D9027D >
+        <button id="pcsBgColorButton">Change background to
+          fuscia</button></br>
+        <button id="pcsTxtColorButton">Change text to fuscia</button>
+      </p>
+    </div>
+    <div class="divider-vert" id="divider-vert"></div>
+    <div class="customer-list" id="customer-list"></div>
   </div>
-  <div class="divider-vert" id="divider-vert"></div>
-  <div class="customer-list" id="customer-list"></div>
-  </div>
-  <button id=resetValue onclick="passValuePickerToParam(4,null)">reset to default</button>
+  <button id="resetValue">reset to default</button>
 
   <script>
-  
-  const normalColors = document.getElementById('normal-colors');
-    const invertedColors = document.getElementById('inverted-colors');
-
-    //bg1wheel + bg2wheel
-    const backgroundColorpicker = document.getElementById('backgroundcolorpicker');
-    const backgroundInvertedColorpicker = document.getElementById('backgroundcolorinvertedpicker');
-
-    //bg1hex + bg2hex
-    const normalBackgroundHex = document.getElementById('backgroundhexinput');
-    const invertedBackgroundHex = document.getElementById('backgroundhexinvertedinput');
-
-    //text1wheel + text2wheel
-    const textColorpicker = document.getElementById('textcolorpicker');
-    const textColorInvertedpicker = document.getElementById('textcolorinvertedpicker');
-
-    //text1hex + text2hex
-    const normalTextHex = document.getElementById('texthexinput');
-    const invertedTextHex = document.getElementById('texthexinvertedinput');
-
-    //bg1p + bg2p
-    const bg1p = document.getElementById('backgroundtext');
-    const bg2p = document.getElementById('invertedbackground');
-
-    //text1p + text2p
-    const text1p = document.getElementById('normaltextcolor');
-    const text2p = document.getElementById('invertedbackgroundtext');
-
-
-    // let backgroundColor, backgroundInvertedColor,textColor, textInvertedColor;
-    let pcsColorFuscia = "#D9027D";
-
-
-
-
   </script>
 </body>
 
