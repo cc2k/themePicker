@@ -1,85 +1,67 @@
-div{
-  display: flex;
-    align-items: flex-start;
-    /* justify-content: center; */
-    /* background-color: blueviolet; */
-    padding: 10px;
-    height: 100%;
-    width:100%;
-}
-.container
-{
-  background-color: blue;
-  width: 450px; 
-   height: 400px;
-}
-
-.backgroundtext{
-  color:black;
-  stroke: 1px; 
-  font-weight: bold;
-}
-
-.normaltextcolor{
-  color:black;
-  stroke: 1px; 
-  font-weight: bold;
-}
-
-.invertedbackground{
-  color:white;
-  stroke: 1px; 
-  font-weight: bold;
-}
-
-.invertedbackgroundtext{
-  color:white;
-  stroke: 1px; 
-  font-weight: bold;
-}
-.normalcolors{
-  background-color: yellow;
-  /* width: 50%; 
-  height: 70%; */
-}
-
-/* .backgroundcolor{
-  /* background-color: tomato; */
-  /* width: 50%; 
-  height: 50%; */
-  
-/*}
-.normaltext{
-  /* background-color: darkblue; */
-  /* width: 50%; 
-  height: 50%; */
-  
-/*}
- */
-
-.invertedcolors{
-  background-color: rgb(87, 10, 40);
-  /* width: 50%; 
-  height: 70%; */
-}
-
-input{
-  margin: 3px;
-}
-
-
-.vl {
-  border-left: 6px solid green;
-  height: 708px;
-  position: absolute;
-  left: 50%;
-  margin-left: 10px;
-  margin-right: 10px;
-  top: 0;
-}
-
-.customerchoice
-{
+body,
+html {
   background-color: aqua;
-  vertical-align: bottom;
+  width: 100%;
+  height: 100%;
 }
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  background-color: red;
+  width: 100%;
+  height: 45%;
+}
+
+.normal-colors {
+  background-color: green;
+  width: 49.5%;
+  height: 100%;
+  
+}
+
+.fonts-size{
+  width: 30px;  
+}
+
+.text-to-change{
+  overflow: hidden ;
+}
+
+.divider-vert {
+  display: inline-block;
+        border-left: 10px solid black;
+        height: 115%;
+}
+
+.inverted-colors{
+  background-color: gold;
+  width: 49.5%;
+  height: 100%;
+}
+
+.divider-hor{
+  border: 10px solid black;
+  /*width: 100%;
+  height: 50%; */
+}
+
+.customer-block{
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 45%;
+}
+
+.custommer-choice{
+  width: 49.5%;
+  height: 100%;
+  background-color: violet;
+}
+
+.customer-list{
+  width: 49.5%;
+  height: 100%;
+  background-color: tomato;
+}
+

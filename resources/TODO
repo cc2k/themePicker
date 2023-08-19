@@ -1,4 +1,4 @@
-    type font
+    type font reset
     rgb input
     pressOnenterMethod fix -- done!
     saves 
