@@ -14,7 +14,7 @@
 
     var settings = {
       style: 'font-select',
-      placeholder: 'Select a font',
+      placeholder: 'Times New Roman',
       lookahead: 2,
       api: 'https://fonts.googleapis.com/css?family=',
       fonts: [

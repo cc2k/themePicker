@@ -1,4 +1,6 @@
     type font reset
+    fonts           -- done
+    fonts size     -- done
     rgb input
     pressOnenterMethod fix -- done!
     saves 

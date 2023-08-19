@@ -3,6 +3,7 @@ const reset = document.getElementById("resetValue");
 const pcsBgColorButton = document.getElementById("pcsBgColorButton");
 const pcsTxtColorButton = document.getElementById("pcsTxtColorButton");
 
+
 const normalColors = document.getElementById('normal-colors');
 const invertedColors = document.getElementById('inverted-colors');
 
@@ -30,8 +31,16 @@ const bg2p = document.getElementById('invertedbackground');
 const text1p = document.getElementById('normaltextcolor');
 const text2p = document.getElementById('invertedbackgroundtext');
 
+const fontsInput = document.getElementById("fonts");
+const fontsSizeElement = document.getElementById("fonts-size");
+const textToChange = document.getElementById("text-to-change");
+const textToChangeInverted = document.getElementById("text-to-change-inverted");
+let fontSize = window.getComputedStyle(textToChange).fontSize;
 
 
+
+fontSize =16;
+fontsSizeElement.value = fontSize;
 
 //fontpickerr ----------------------
 
@@ -39,6 +48,7 @@ window.onload = function () {
   //YOUR JQUERY CODE
   $('#font').fontselect();
 
+ 
 
   backgroundColorpicker.addEventListener('change', function () { passValuePickerToParam(0, backgroundColorpicker.value); }, false);
 
@@ -53,6 +63,13 @@ window.onload = function () {
   normalBackgroundHex.addEventListener('keydown', function () { checkForEnter(2, this.value); }, false);
 
   normalTextHex.addEventListener('keydown', function () { checkForEnter(3, this.value); }, false);
+
+  
+  
+  fontsSizeElement.addEventListener('input', function(){ changeFontSize(this.value);},false);
+
+
+  console.log(fontSize);
 
 }
 
@@ -93,6 +110,13 @@ function passValuePickerToParam(pickerTochoice, value) {
     case 4:
       backgroundColorpicker.value = "#ffffff";
       textColorpicker.value = "#000000";
+      textToChange.style.fontSize = "16px";
+      textToChangeInverted.style.fontSize = "16px";
+      fontsSizeElement.value =16;
+      textToChange.style.fontFamily ="Times new Roman";
+      textToChangeInverted.style.fontFamily ="Times New Roman";
+      //fontsInput.value = "Times New Roman";//error ?
+
       changeBackgroundcolorFromPicker("#ffffff");
       changeTextcolorFromPicker("#000000");
       break;
@@ -137,7 +161,10 @@ function checkForEnter(modeToChose, valueToPass) {
   }
 
 
-
- 
+}
+function changeFontSize(value){
+  console.log("value: "+value);
+  textToChange.style.fontSize = value + "px";
+  textToChangeInverted.style.fontSize = value + "px";
 }
 
