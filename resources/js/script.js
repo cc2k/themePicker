@@ -1,8 +1,30 @@
+/*what needs to be in the theme object
+- text color
+- textsize
+- text family
+- background color
+- save-name
+*/
+let themeObject ={
+  'save-name' : "",
+  'text-family' : "",
+  'text-size' : "",
+  'text-color': "",
+  'background-color' : ""
+}
+
+let saveCurrent = {...themeObject};
+let savesObjectsArray=[];
+savesObjectsArray.push(saveCurrent);
+
+
+
+// console.log(`saveCurrent: ${saveCurrent} array[0]: ${savesObjectsArray[0]["background-color"] = "#fffppp"}`)
+// console.log(savesObjectsArray[0]["background-color"])
 
 const reset = document.getElementById("resetValue");
 const pcsBgColorButton = document.getElementById("pcsBgColorButton");
 const pcsTxtColorButton = document.getElementById("pcsTxtColorButton");
-
 
 const normalColors = document.getElementById('normal-colors');
 const invertedColors = document.getElementById('inverted-colors');
@@ -47,6 +69,7 @@ fontsSizeElement.value = fontSize;
 window.onload = function () {
   //YOUR JQUERY CODE
   $('#font').fontselect();
+  
 
  
 
@@ -60,11 +83,9 @@ window.onload = function () {
 
   reset.addEventListener('click', function () { passValuePickerToParam(4, null); }, false);
 
-  normalBackgroundHex.addEventListener('keydown', function () { checkForEnter(2, this.value); }, false);
+  normalBackgroundHex.addEventListener('keydown', function (event) { checkForEnter(event,2, this.value); }, false);
 
-  normalTextHex.addEventListener('keydown', function () { checkForEnter(3, this.value); }, false);
-
-  
+  normalTextHex.addEventListener('keydown', function (event) { checkForEnter(event, 3, this.value); }, false);
   
   fontsSizeElement.addEventListener('input', function(){ changeFontSize(this.value);},false);
 
@@ -115,7 +136,11 @@ function passValuePickerToParam(pickerTochoice, value) {
       fontsSizeElement.value =16;
       textToChange.style.fontFamily ="Times new Roman";
       textToChangeInverted.style.fontFamily ="Times New Roman";
-      //fontsInput.value = "Times New Roman";//error ?
+      textToChangeInverted.style.color = "#ffffff"
+      fontsInput.ariaPlaceholder = "Times new Roman";
+      
+      //fontsInput.value = 'Times New Roman';//error ?
+      
 
       changeBackgroundcolorFromPicker("#ffffff");
       changeTextcolorFromPicker("#000000");
@@ -132,11 +157,14 @@ function changeBackgroundcolorFromPicker(value) {
   backgroundColorpicker.value = hex; //needed??
   normalBackgroundHex.value = hex;
 
+
   textColorInvertedpicker.value = hex;
+  textToChangeInverted.style.color = hex;
   invertedTextHex.value = hex;
 
   bg2p.style.color = hex;
   text2p.style.color = hex;
+  
 }
 
 function changeTextcolorFromPicker(value) {
@@ -151,9 +179,10 @@ function changeTextcolorFromPicker(value) {
 
   text1p.style.color = hex;
   bg1p.style.color = hex;
+  textToChange.style.color = hex;
 }
 
-function checkForEnter(modeToChose, valueToPass) {
+function checkForEnter(event,modeToChose, valueToPass) {
   console.log(event.keyCode + " mode:" + modeToChose + " value:" + valueToPass);
 
   if (event.keyCode == 13) {

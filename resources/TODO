@@ -1,10 +1,13 @@
     type font reset
     fonts           -- done
     fonts size     -- done
+        - add text to explain to change the number
     rgb input
     pressOnenterMethod fix -- done!
-    saves 
+    saves localstorage?
     list with previous saves
+    textfield with json from saves
+    input field to put in json from a diffrent browser?
     localization
     email colorcodes saves?
     check for #
