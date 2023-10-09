@@ -5,6 +5,7 @@
 
   <link href="resources/css/styles.css" rel="stylesheet" />
   <script type="text/javascript" src="resources/js/script.js" defer></script>
+  <script type="text/javascript" src="resources/js/dbHandler/DBHandler.js" defer></script>
   <!-- jquery -->
   <script src="resources/jquery/jquery-min.js" type="text/javascript"></script>
 
@@ -29,9 +30,9 @@
         <!-- bg1p -->
       <p class="backgroundtext" id="backgroundtext">Background</p>
       <!-- bg1wheel -->
-      <input class = "backgroundcolorpicker" id="backgroundcolorpicker" type="color" value="#ffffff">
+      <input class="backgroundcolorpicker" id="backgroundcolorpicker" type="color" value="#ffffff">
       <!-- bg1hex -->
-      <input class = "backgroundhexinput" id="backgroundhexinput" type="text" size="6" value="#ffffff">
+      <input class="backgroundhexinput" id="backgroundhexinput" type="text" size="6" value="#ffffff">
 
       <!-- text1p -->
       <p class="normaltextcolor" id="normaltextcolor">TextColor</p>
@@ -62,7 +63,8 @@
       <input id="textcolorinvertedpicker" type="color" value="#ffffff">
       <!-- text2hex -->
       <input id="texthexinvertedinput" type="text" value="#ffffff" size="6">
-      <p class="text-to-change-inverted" id="text-to-change-inverted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
+      <p class="text-to-change-inverted" id="text-to-change-inverted">Lorem ipsum dolor sit, amet consectetur
+        adipisicing elit. Itaque,
         dolores. In, iste quas nam iusto aperiam enim distinctio. Consectetur vero unde odit obcaecati voluptatibus
         laudantium maxime soluta neque rem cum!</p>
 
@@ -76,19 +78,39 @@
 
   <div class="customer-block">
     <div class="custommer-choice" id="custommer-choice">
-
-      <p>Some customers codes:</p>
-      <p id="Pcs">fuschia roze = #D9027D >
+      <div>
+        <p>Some customers codes:</p>
+        <p id="Pcs">fuschia roze = #D9027D </p>
         <button id="pcsBgColorButton">Change background to
           fuscia</button></br>
         <button id="pcsTxtColorButton">Change text to fuscia</button>
-      </p>
+      </div>
     </div>
     <div class="divider-vert" id="divider-vert"></div>
     <div class="customer-list" id="customer-list">
-      <input type="text" name="add-save-customer" id="add-save-customer" placeholder="Save configuration..."> <button class = "add-save-customor-btn" id = "add-save-customor-btn">Save</button>
-      <p>Select a save to load</p>
-<select name="customer-saves" id="customer-saves"> </select>
+      <input type="text" name="add-save-customer" id="add-save-customer" placeholder="Save configuration..."> <button
+        class="add-save-customor-btn" id="add-save-customor-btn">Save</button>
+      <div>
+        <p>Select a save to load</p>
+        <select name="customer-saves" id="customer-saves" multiple> </select>
+        <option value="empty"></option>
+
+        <table>
+          <tr>
+            <td class="save-name" id="save-name">Savename: </td>
+              <td class="save-size" id="save-size">TextSize:</td>
+              <td class="save-textfamily" id="save-textfamily">Text family:</td>
+                <td class="save-backgroundcolor" id="save-backgroundcolor">Backgroundcolor: </td>
+              </tr>
+              
+              <tr>
+            <td class="save-textcolor" id="save-textcolor">Textcolor: </td>
+            <td class="save-id" id="save-id">id</td>
+            <td class="save-created" id="save-created">Created: </td>
+            <td class="save-updated" id="save-updated">Updated:</td>
+          </tr>
+        </table>
+      </div>
 
     </div>
 

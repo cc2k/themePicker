@@ -15,7 +15,8 @@ html {
 
 .normal-colors {
   background-color: green;
-  width: 49.5%;
+  padding-left: 10px;
+  width: 49.0%;
   height: 100%;
   
 }
@@ -36,7 +37,8 @@ html {
 
 .inverted-colors{
   background-color: gold;
-  width: 49.5%;
+  padding-left: 10px;
+  width: 49.0%;
   height: 100%;
 }
 
@@ -54,18 +56,34 @@ html {
 }
 
 .custommer-choice{
-  width: 49.5%;
+  padding-left: 10px;
+  width: 49.0%;
   height: 100%;
   background-color: violet;
 }
 
 .customer-list{
-  width: 49.5%;
-  height: 100%;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 49.0%;
+  height: 97.50%;
   background-color: tomato;
 }
 
 .customer-saves{
-  width: 50px;
+  max-height: 150px;
+  /* width: 200px; */
+  overflow-y: auto;
+}
+select {
+  width: 100px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid greenyellow;
 }
 

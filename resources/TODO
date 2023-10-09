@@ -1,14 +1,18 @@
-    type font reset
-    fonts           -- done
-    fonts size     -- done
+    -type font reset
+    -fonts           -- done
+    -fonts size     -- done
         - add text to explain to change the number
-    rgb input
-    pressOnenterMethod fix -- done!
-    saves localstorage?
-    list with previous saves
-    textfield with json from saves
-    input field to put in json from a diffrent browser?
-    localization
-    email colorcodes saves?
-    check for #
-    fond color changed fix
+    -rgb input
+    -pressOnenterMethod fix -- done!
+    -saves localstorage? --abandoned becuase of use db
+    -list with previous saves -- done, but needs change
+    -textfield with json from saves -- abondon cus we use db now
+    -input field to put in json from a diffrent browser?                  --abandoned becuase of db
+    -localization
+    -email colorcodes saves?
+    -check for #
+    -fond color changed fix
+    -use react/mui5
+    -create own font change
+    -createdBy username/ip?
+    -add background image option
