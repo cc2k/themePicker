@@ -19,14 +19,17 @@ html {
   width: 49.0%;
   height: 100%;
   
+  overflow: auto;
+  
 }
 
 .fonts-size{
   width: 30px;  
 }
 
-.text-to-change{
-  overflow: hidden ;
+.text-to-change, .text-to-change-inverted{
+  overflow: auto ;
+  text-overflow: ellipsis;
 }
 
 .divider-vert {
@@ -40,6 +43,7 @@ html {
   padding-left: 10px;
   width: 49.0%;
   height: 100%;
+  overflow: auto;
 }
 
 .divider-hor{

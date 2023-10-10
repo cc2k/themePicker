@@ -5,7 +5,7 @@
     -rgb input
     -pressOnenterMethod fix -- done!
     -saves localstorage? --abandoned becuase of use db
-    -list with previous saves -- done, but needs change
+    -list with previous saves -- done
     -textfield with json from saves -- abondon cus we use db now
     -input field to put in json from a diffrent browser?                  --abandoned becuase of db
     -localization
@@ -16,3 +16,4 @@
     -create own font change
     -createdBy username/ip?
     -add background image option
+    - added save needs to show id etc immidiatly after adding

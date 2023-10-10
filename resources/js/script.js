@@ -135,10 +135,10 @@ customerSaves.addEventListener('change', function () {
   console.log(savesObjectsArray);
 
   textSaveName.textContent = `Savename: ${savesObjectsArray[index].savename}`;
-  textSaveSize.textContent = `TextSize: ${savesObjectsArray[index]['textsize']}`;
-  textSaveFamily.textContent = `Text family: ${savesObjectsArray[index]['text-family']}`;
-  textSaveBackgroundColor.textContent = `Backgroundcolor: ${savesObjectsArray[index]['background-color']}`;
-  textSaveTextColor.textContent = `Textcolor: ${savesObjectsArray[index]['text-color']}`;
+  textSaveSize.textContent = `Text Size: ${savesObjectsArray[index]['text_size']}`;
+  textSaveFamily.textContent = `Text family: ${savesObjectsArray[index]['text_family']}`;
+  textSaveBackgroundColor.textContent = `Backgroundcolor: ${savesObjectsArray[index]['background_color']}`;
+  textSaveTextColor.textContent = `Textcolor: ${savesObjectsArray[index]['text_color']}`;
   textSaveID.textContent = `ID: ${savesObjectsArray[index]._id}`;
   textSaveCreated.textContent = `Created: ${savesObjectsArray[index].createdAt}`;
   textSaveUpdated.textContent = `Updated: ${savesObjectsArray[index].updatedAt}`;
@@ -195,10 +195,10 @@ function passValuePickerToParam(modeTochoice, value) {
 
       // console.log(`value: ${value}`);
       jsonObject["savename"] = value;
-      jsonObject["background-color"] = backgroundColorpicker.value.replace("#", "");;
-      jsonObject["text-color"] = textColorpicker.value.replace("#", "");
+      jsonObject["background_color"] = backgroundColorpicker.value.replace("#", "");;
+      jsonObject["text_color"] = textColorpicker.value.replace("#", "");
       // jsonObject["text-family"] = textToChange.value;//not working yet
-      jsonObject["text-size"] = fontsSizeElement.value;
+      jsonObject["text_size"] = fontsSizeElement.value;
       // jsonObject.__v = null;
       // jsonObject._id = null;
       // jsonObject.createdAt = null;
