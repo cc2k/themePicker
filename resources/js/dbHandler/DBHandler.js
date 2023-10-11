@@ -2,8 +2,11 @@
 function getSaveObject() {
 
 
-  const urlLocal = "http://localhost:5500/saves";
+  const urlLocal = "https://apiserver-production-05de.up.railway.app/saves";
+  // const urlLocal = "http://localhost:5500/saves";
   // const urlLocal = "https://dv9sdcgg-5500.euw.devtunnels.ms/saves";
+
+  console.log(urlLocal);
 
 
   fetch(urlLocal)
@@ -59,7 +62,8 @@ console.log(savenameValue);
 
   const existsInClientCollection = savesObjectsArray.some(item => item['save-name'] === savenameValue);
 
-  const urlLocal = `http://localhost:5500/getsave/${savenameValue}`;
+  const urlLocal = `https://apiserver-production-05de.up.railway.app/getsave/${savenameValue}`;
+  // const urlLocal = `http://localhost:5500/getsave/${savenameValue}`;
   // const urlLocal = `http://127.0.0.1:5500/getsave/${savenameValue}`;
 
   console.log(urlLocal);
@@ -123,7 +127,7 @@ console.log(savenameValue);
 
 
 function getSaveToDB(jsonObjectToSave) {
-  const urlLocal = "http://localhost:5500/saves";
+const urlLocal = "https://apiserver-production-05de.up.railway.app/saves";
   
 
 console.log(JSON.stringify(jsonObjectToSave));
