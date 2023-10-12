@@ -1,8 +1,21 @@
+let URLAPISERVER ="";
+
+function setURL(){
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+{
+
+  URLAPISERVER = "http://localhost:5500"
+  return;
+}
+  URLAPISERVER = "https://apiserver-production-05de.up.railway.app"
+}
+
+
 
 function getSaveObject() {
 
 
-  const urlLocal = "https://apiserver-production-05de.up.railway.app/saves";
+  const urlLocal = `${URLAPISERVER}/saves`;
   // const urlLocal = "http://localhost:5500/saves";
   // const urlLocal = "https://dv9sdcgg-5500.euw.devtunnels.ms/saves";
 
@@ -62,7 +75,7 @@ console.log(savenameValue);
 
   const existsInClientCollection = savesObjectsArray.some(item => item['save-name'] === savenameValue);
 
-  const urlLocal = `https://apiserver-production-05de.up.railway.app/getsave/${savenameValue}`;
+  const urlLocal = `${URLAPISERVER}/getsave/${savenameValue}`;
   // const urlLocal = `http://localhost:5500/getsave/${savenameValue}`;
   // const urlLocal = `http://127.0.0.1:5500/getsave/${savenameValue}`;
 
@@ -127,7 +140,7 @@ console.log(savenameValue);
 
 
 function getSaveToDB(jsonObjectToSave) {
-const urlLocal = "https://apiserver-production-05de.up.railway.app/saves";
+const urlLocal = `${URLAPISERVER}/saves`;
   
 
 console.log(JSON.stringify(jsonObjectToSave));

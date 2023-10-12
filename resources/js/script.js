@@ -1,5 +1,3 @@
-
-
 const reset = document.getElementById("resetValue");
 const pcsBgColorButton = document.getElementById("pcsBgColorButton");
 const pcsTxtColorButton = document.getElementById("pcsTxtColorButton");
@@ -91,10 +89,13 @@ let saveCurrent = { };
 
 window.onload = function () {
 
+setURL();
+
+
   getSaveObject();
 
 
-
+  
 
   backgroundColorpicker.addEventListener('change', function () { passValuePickerToParam(0, backgroundColorpicker.value); }, false);
 
